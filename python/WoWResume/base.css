@@ -1,0 +1,152 @@
+body {
+	font-family: Arial,sans-serif;
+	font-size: 13px;
+	color: white;
+	background-color: #000;
+	height: 100%;
+	min-height: 600px;
+	min-width: 800px;
+}
+.clear {
+	clear: both;
+}
+.mainBox {
+	margin: auto;
+	width: 80%;
+	min-width: 800px;
+	height: 80%;
+	min-height: 520px;
+	padding: 5px;
+	border: 1px solid #404040;
+	background-color: #333;
+}
+.topBox {
+	margin: auto;
+	width: 538px;
+	min-width: 538px;
+	background-color: #000;
+}
+.name {
+	float: left;
+	width: 130px;
+	text-align: center;
+	color: pink;
+}
+.class {
+	float: right;
+	width: 180px;
+	text-align: center;
+}
+.level {
+	float: right;
+	width: 80px;
+	text-align: center;
+}
+.talentSpecBox {
+	float: left;
+	width: 246px;
+	text-align: center;
+}
+.talentBox {
+	margin: auto;
+	width: 492px;
+	min-width: 492px;
+	height: 404px;
+	border: 1px solid #515151;
+}
+.talentsOne {
+	position: relative;
+	margin: auto;
+	width: 246px;
+	float: left;
+	background-image:url('http://static.wowhead.com/images/talent/classes/backgrounds/paladin_1.jpg?85');
+	height: 100%;
+} 
+.talentsTwo {
+	position: relative;
+	margin: auto;
+	width: 246px;
+	float: left;
+	background-image:url('http://static.wowhead.com/images/talent/classes/backgrounds/paladin_2.jpg?85');
+	background-repeat: no-repeat;
+	height: 100%;
+} 
+.talentsThree {
+	position: relative;
+	margin: auto;
+	width: 246px;
+	float: right;
+	background-image:url('http://static.wowhead.com/images/talent/classes/backgrounds/paladin_3.jpg?85');
+	height: 100%;
+}
+.talentIcon {
+	width: 44px;
+	height: 44px;
+	background-image:url('http://static.wowhead.com/images/icon_border_medium.png');
+} 
+.talent {
+	display: block;
+	position: absolute;
+	visibility: visible;
+	height: 39px;
+	width: 39px;
+}
+.talent-icon {
+	display: inline;
+	width: 39px;
+	height: 39px;
+	border: 2px solid #707070;
+	border-radius: 5px 5px;
+}
+.talent-rank-spendable {
+	background-color: black;
+	border: 1px solid gold;
+	border-radius: 5px 5px;
+	position: absolute;
+	left: 32px;
+	top: 29px;
+	width: 10px;
+	padding-left: 2px;
+	color: lime;
+	visibility: visible;
+}
+.description-hover {
+	clear: both;
+	background-color: #1f1f1f;
+	border: 1px solid #fefefe;
+	border-radius: 5px 5px;
+	margin-top: -120px;
+	margin-left: 44px;
+	width: 120px;
+	padding: 10px;
+	z-index: 5;
+	overflow: visible;
+	visibility: visible;
+	display: block;
+}
+.talent-description {
+	clear: both;
+	background-color: #1f1f1f;
+	border: 1px solid #fefefe;
+	border-radius: 5px 5px;
+	margin-top: -120px;
+	margin-left: 44px;
+	width: 120px;
+	padding: 10px;
+	z-index: 5;
+	overflow: visible;
+	visibility: hidden;
+	display: block;
+}
+div.talent-branch-arrow {
+	background-image: url(http://www.wowtal.com/static/img/wowtal/arrows-ver.png);
+	height: 8px;
+	width: 21px;
+	z-index: 3;
+}
+div.talent-branch-line {
+	background-image: url(http://www.wowtal.com/static/img/wowtal/branches-ver.png);
+	background-repeat: repeat-y;
+	width: 21px;
+	z-index: 3;
+}
