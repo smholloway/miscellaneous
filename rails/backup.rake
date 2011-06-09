@@ -23,6 +23,7 @@ namespace :your_app_name do
 
 		# move the backup
 		puts "Moving bundle to backups/#{bundle_name}.dump"
+		`mkdir -p backups/`
 		`mv '#{bundle_name}'.dump backups/#{bundle_name}.dump`
 	end
 end
