@@ -14,7 +14,7 @@ namespace :your_app_name do
 		timestamp = `date -u '+%Y-%m-%d-%H-%M'`.chomp
 		bundle_name = "your_app_name-#{timestamp}"
 		puts "Capturing bundle #{bundle_name}..."
-		`heroku pgbackups:capture --app your_app_name '#{bundle_name}'`
+		`heroku pgbackups:capture --expire`
 
 		# download & destroy the bundle we just captured
 		puts "Downloading bundle #{bundle_name}.dump"
