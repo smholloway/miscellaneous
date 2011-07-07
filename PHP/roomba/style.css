@@ -1,0 +1,23 @@
+body {
+ background-color:ffffff;
+ font-size:100%;
+ color:000000;
+ text-decoration:none;
+ font-family:Verdana,sans serif;
+}
+
+.formContent {
+ text-align:center;
+ background-color:dddddd;
+ font-size:115%;
+ width:45%;
+ margin: auto;
+ padding: 10px;
+ color:000000;
+ border:2px dashed black;
+}
+
+a,a:visited {
+ color:#000;
+ text-decoration:none;
+}

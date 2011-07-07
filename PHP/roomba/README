@@ -1,0 +1,5 @@
+SEAP Code for the Roomba iRobot
+
+Extract this into your Tomcat webapps directory. The command follows the form unzip <file> -d <destination> which will be something like unzip /home/jars/Desktop/roomba.zip -d /home/jars/tomcat5.5/webapps/
+
+I left the php files, but you'll use roomba.jsp. Let me know if you run into any problems.
