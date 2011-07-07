@@ -4,6 +4,7 @@
 // ==UserScript==
 // @name          simple
 // @namespace     google
+// @author        smholloway
 // @description   Simple userscript to hide the top banner bar in Google Reader
 // @include       http://www.google.com/reader*
 // @exclude       http://plus.google.com/*
