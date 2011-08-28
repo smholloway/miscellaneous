@@ -4,8 +4,6 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -52,7 +50,7 @@ public class TrieTest {
 	@Test
 	public void test_search_takes_under_a_second() throws Exception {
 		final long endTime, startTime = System.nanoTime();
-		Iterable<String> values = null;
+		Set<String> values = null;
 		try {
 		 values = trie.search("au");
 		} finally {
@@ -63,8 +61,8 @@ public class TrieTest {
 		
 		final long duration = endTime - startTime;
 		System.out.println("Method took " + duration + " nanoseconds " +
-				"(" + duration/1000L + " microseconds or " + 
-				duration/1000000L + " milliseconds" + ")");
+				           "(" + duration/1000L + " microseconds or " + 
+				           duration/1000000L + " milliseconds" + ")");
 		
 		assertTrue(duration/1000L < 1000);
 	}
@@ -84,6 +82,31 @@ public class TrieTest {
 		shouldContainWords.add("Anapolis, MY");
 		shouldContainWords.add("Anaheim, CA");
 		shouldContainWords.add("Albequerque, NM");
+		
+		assertTrue(values.containsAll(shouldContainWords));
+	}
+	
+	@Test
+	public void test_trie_with_au() throws Exception {
+		//test with a au here
+		Set<String> values = trie.search("au");
+		
+		//words that should be seen
+		Collection<String> shouldContainWords = new ArrayList<String>();
+		shouldContainWords.add("Austin, TX");
+		
+		assertTrue(values.containsAll(shouldContainWords));
+	}
+	
+	@Test
+	public void test_trie_with_an() throws Exception {
+		//test with an a here
+		Set<String> values = trie.search("an");
+		
+		//words that should be seen
+		Collection<String> shouldContainWords = new ArrayList<String>();
+		shouldContainWords.add("Anapolis, MY");
+		shouldContainWords.add("Anaheim, CA");
 		
 		assertTrue(values.containsAll(shouldContainWords));
 	}
