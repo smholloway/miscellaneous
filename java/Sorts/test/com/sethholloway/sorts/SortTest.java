@@ -35,12 +35,12 @@ public class SortTest {
 		List<Integer> l = new ArrayList<Integer>();
 		l.add(1);
 		assertTrue(l.equals(qs.sort(l)));
+		assertTrue(l.equals(ss.sort(l)));
 	}
 	
 	@Test
 	public void test_quicksort() {
 		List<Integer> afterSort = qs.sort(unsortedList);
-		System.out.println(afterSort);
 		assertTrue(sortedList.equals(afterSort));
 	}
 
