@@ -2,7 +2,7 @@ package com.sethholloway.sorts;
 
 import java.util.List;
 
-public class SelectionSort {
+public class SelectionSort implements Sort {
 	
 	public List<Integer> sort(List<Integer> input) {
 		List<Integer> result = input;

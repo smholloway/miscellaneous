@@ -4,20 +4,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.sethholloway.sorts.*;
 
 public class SortTest {
-	Quicksort qs     = new Quicksort();
-	SelectionSort ss = new SelectionSort();
-	List<Integer> sortedList   = new ArrayList<Integer>();
-	List<Integer> unsortedList = new ArrayList<Integer>();
+	Sort qs;
+	Sort ss;
+	List<Integer> sortedList;
+	List<Integer> unsortedList;
 
 	@Before
-	public void setUp() throws Exception {	
+	public void setUp() throws Exception {
+		qs = new Quicksort();
+		ss = new SelectionSort();
+		sortedList   = new ArrayList<Integer>();
+		unsortedList = new ArrayList<Integer>();
+
+		
 		sortedList.add(0);
 		sortedList.add(1);
 		sortedList.add(2);

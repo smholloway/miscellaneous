@@ -6,14 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Utilities {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
+	// prevent people from instantiating the utilities class
+	private Utilities() { }
 	
 	public static List<Integer> init(int size, int range) {
 		List<Integer> result = new ArrayList<Integer>();
