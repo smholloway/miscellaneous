@@ -1,0 +1,14 @@
+## Java specific
+*.class
+
+## IDE specific
+*.settings
+*.metadata
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.log
