@@ -1,6 +1,6 @@
 package com.sethholloway;
 
-public interface iTree<T> {
+public interface iTree<T extends Comparable<T>> {
 
 	public boolean contains(T value);
 

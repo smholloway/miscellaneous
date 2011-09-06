@@ -1,6 +1,6 @@
 package com.sethholloway;
 
-public class BinarySearchTree<T> implements iTree {
+public class BinarySearchTree<T extends Comparable<T>> implements iTree {
 	private TreeNode root;
 	
 	public BinarySearchTree() {
@@ -38,7 +38,7 @@ public class BinarySearchTree<T> implements iTree {
 		if (node.getValue() == null) {
 			node.setValue(value);
 		} else {
-			if (node.getValue() > value) {
+			if (value.U) {
 				addToNode(node.getLeft(), value);
 			} else {
 				addToNode(node.getRight(), value);
