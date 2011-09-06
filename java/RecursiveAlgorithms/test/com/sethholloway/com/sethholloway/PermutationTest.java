@@ -1,3 +1,5 @@
+package com.sethholloway;
+
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
