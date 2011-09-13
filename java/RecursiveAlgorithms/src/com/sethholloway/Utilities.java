@@ -19,5 +19,24 @@ public class Utilities {
 		
 		return str.toString();
 	}
+	
+	public static String numberToString(int input) {
+		StringBuilder ret = new StringBuilder();
+		int product   = input / 26;
+		int remainder = input % 26;
+		
+		if (remainder == 0) {
+			ret.insert(0 , (char) (26 + 64)); // Z
+			product--;
+		} else {
+			ret.insert(0 , (char) ((remainder) + 64)); // A is 65; a is 97
+		}
+		
+		if (product >= 1) {
+			ret.insert(0 , numberToString(product));
+		}
+		
+		return ret.toString();
+	}
 
 }

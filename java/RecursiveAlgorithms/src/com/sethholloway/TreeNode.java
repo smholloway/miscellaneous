@@ -2,8 +2,8 @@ package com.sethholloway;
 
 public class TreeNode<T extends Comparable<T>> {
 	private T value;
-	private TreeNode left;
-	private TreeNode right;
+	private TreeNode<T> left;
+	private TreeNode<T> right;
 	
 	public TreeNode() {
 		value = null;
@@ -12,7 +12,7 @@ public class TreeNode<T extends Comparable<T>> {
 	}
 	
 	public TreeNode(T input) {
-		value  = input;
+		value = input;
 		left  = null;
 		right = null;
 	}
@@ -81,5 +81,23 @@ public class TreeNode<T extends Comparable<T>> {
 	@Override
 	public String toString() {
 		return "(" + value + ")";
+	}
+	
+	public boolean add(T value) {
+		if (value.compareTo(value) > 0) {
+			if (right == null) {
+				right = new TreeNode<T>(value);
+				return true;
+			} else {
+				return right.add(value);
+			}
+		} else {
+			if (left == null) {
+				left = new TreeNode<T>(value);
+				return true;
+			} else {
+				return left.add(value);
+			}
+		}
 	}
 }
