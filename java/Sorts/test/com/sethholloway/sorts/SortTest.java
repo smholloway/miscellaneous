@@ -12,6 +12,7 @@ import com.sethholloway.sorts.*;
 public class SortTest {
 	Sort qs;
 	Sort ss;
+	Sort ms;
 	List<Integer> sortedList;
 	List<Integer> unsortedList;
 
@@ -19,9 +20,9 @@ public class SortTest {
 	public void setUp() throws Exception {
 		qs = new Quicksort();
 		ss = new SelectionSort();
+		ms = new MergeSort();
 		sortedList   = new ArrayList<Integer>();
 		unsortedList = new ArrayList<Integer>();
-
 		
 		sortedList.add(0);
 		sortedList.add(1);
@@ -41,6 +42,7 @@ public class SortTest {
 		l.add(1);
 		assertTrue(l.equals(qs.sort(l)));
 		assertTrue(l.equals(ss.sort(l)));
+		assertTrue(l.equals(ms.sort(l)));
 	}
 	
 	@Test
@@ -52,6 +54,12 @@ public class SortTest {
 	@Test
 	public void test_selectionsort() {
 		List<Integer> afterSort = ss.sort(unsortedList);
+		assertTrue(sortedList.equals(afterSort));
+	}
+	
+	@Test
+	public void test_mergesort() {
+		List<Integer> afterSort = ms.sort(unsortedList);
 		assertTrue(sortedList.equals(afterSort));
 	}
 }
