@@ -30,6 +30,26 @@ public class LinkedList {
 		return temp;
 	}
 	
+	public void reverseKata() {
+		if (this.size <= 1) {
+			return;
+		}
+		
+		Node prev    = null;
+		Node current = first;
+		Node next    = first.next;
+		
+		while ( next != null ) {
+			current.next = prev;
+			prev         = current;
+			current      = next;
+			next         = next.next;
+		}
+		
+		current.next = prev;
+		first = current;
+	}
+	
 	public void recursiveReverse() {
 		first = reverse(first, null);
 	}

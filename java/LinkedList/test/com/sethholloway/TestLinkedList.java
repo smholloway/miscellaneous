@@ -77,6 +77,23 @@ public class TestLinkedList {
 	}
 	
 	@Test
+	public void test_reverse_kata_more_elements() {
+		LinkedList nl = new LinkedList();
+		ll.insert(1);
+		ll.insert(2);
+		ll.insert(3);
+		ll.insert(4);
+		ll.reverseKata();
+		
+		nl.insert(4);
+		nl.insert(3);
+		nl.insert(2);
+		nl.insert(1);
+
+		assertEquals(nl.toString(), ll.toString());
+	}
+	
+	@Test
 	public void test_recursive_reverse_more_elements() {
 		LinkedList nl = new LinkedList();
 		ll.insert(1);

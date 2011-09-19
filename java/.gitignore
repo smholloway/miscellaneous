@@ -2,6 +2,11 @@
 *.class
 *.classpath
 
+## Package Files
+*.jar
+*.war
+*.ear
+
 ## IDE specific
 *.settings
 *.metadata
