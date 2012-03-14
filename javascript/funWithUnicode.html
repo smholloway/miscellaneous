@@ -1,0 +1,44 @@
+
+<html>
+	<head>
+		<title>Fun with Unicode Characters</title>
+	</head>
+
+	<body>
+		<header>
+			<h1>Fun with Unicode Characters</h1>
+		</header>
+
+		<div id="all-characters">
+		<script>
+		var str = "0123456789ABCDEF";
+		var ch1, ch2, ch3, ch4, i, j, k, l, unicode_char;
+		for ( i = 0; i < str.length; i++ ) {
+			ch1 = str.charAt(i);
+			document.write("<div class='"+ch1+"'>");
+			for ( j = 0; j < str.length; j++ ) {
+				ch2 = str.charAt(j);
+				document.write("<div class='"+ch2+"'>");
+				for ( k = 0; k < str.length; k++ ) {
+					ch3 = str.charAt(k);
+					document.write("<div class='"+ch3+"'>");
+					for ( l = 0; l < str.length; l++ ) {
+						ch4 = str.charAt(l);
+						document.write("<span class='"+ch4+"'>");
+						unicode_char = "&#x" + ch1 + ch2 + ch3 + ch4 + ";"
+						document.write(unicode_char + "</span>");
+					}
+					document.write("</div>");
+				}
+				document.write("</div><br/>");
+			}
+			document.write("</div><hr/><br/>");
+		}
+		</script>
+		</div>
+
+		<footer>
+			<h4>&#x00A9; Seth Holloway</h4>
+		<footer>
+	</body>
+</html>
