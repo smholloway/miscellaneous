@@ -1,27 +1,17 @@
-var compile = function (musexpr) {
-		noteProgram = [];
-		timeNow = 0;
-		return compileNoteFromMus(musexpr);
-};
+var compile = function (musexpr, time) {
+  time = time || 0;
 
-var compileNoteFromMus = function(musexpr) {
-		if ( musexpr.tag === 'note' ) {
-				noteProgram.push( generateNoteEntry(musexpr, timeNow) );
-				timeNow += musexpr.dur;
-		} else if ( musexpr.tag === 'seq' ) {
-				compileNoteFromMus( musexpr.left );
-				compileNoteFromMus( musexpr.right );
-		}
-		return noteProgram;
-};
-
-var generateNoteEntry = function (expr , t) {
-		if ( expr.tag === 'note' ) {
-				noteEntry = expr;
-				noteEntry.start = t;
-				return noteEntry;
-		}
-};
+  if ( musexpr.tag === 'note' ) {
+    return [{
+      tag: 'note',
+      pitch: musexpr.pitch,
+      dur: musexpr.dur,
+      start: time
+    }];
+  } else if ( musexpr.tag === 'seq' ) {
+    return compileFree( musexpr.left, time).concat( compileFree( musexpr.right, endTime(time, musexpr.left)) );
+  }
+}
 
 var endTime = function (time, expr) {
 		if ( expr.tag === 'note' ) {
