@@ -13,9 +13,9 @@ var SyntaxChecker = function (openToken, closeToken) {
     for ( var i = 0, len = expression.length; i < len; i++ ) {
       if ( openTokens < 0 )
         return false;
-      if ( expression.charAt(i) === openToken ) {
+      if ( expression.charAt(i) === this.openToken ) {
         openTokens++;
-      } else if ( expression.charAt(i) === closeToken ) {
+      } else if ( expression.charAt(i) === this.closeToken ) {
         openTokens--;
       }
     }
@@ -24,32 +24,28 @@ var SyntaxChecker = function (openToken, closeToken) {
 
   // a simple test suite
   this.test = function() {
-    return validate('') 
-      && validate('true')
-      && validate(openToken + closeToken)
-      && !validate(closeToken + openToken)
-      && validate(openToken + closeToken + openToken + closeToken)
-      && !validate(closeToken + openToken + closeToken)
-      && !validate(openToken + openToken + closeToken)
-      && validate(openToken + 'valid' + closeToken)
-      && !validate(openToken + 'invalid')
-      && !validate('invalid' + closeToken)
-      && validate('var test = function() { return true }')
-      && validate('(function(a){return a;})(5);')
-      && validate('(function(a){return [a, a];})(5);');
-      /*
-      && !validate('var test = function() ( { return true }')
-      && !validate('(function(a){return a;})(5));')
-      && !validate('(function(a){return [[a, a];})(5);')
-      && !validate('(function(a){return [a, a]];})(5);');
-      */
+    return this.validate('') 
+      && this.validate('true')
+      && this.validate(openToken + this.closeToken)
+      && !this.validate(closeToken + this.openToken)
+      && this.validate(openToken + this.closeToken + this.openToken + this.closeToken)
+      && !this.validate(closeToken + this.openToken + this.closeToken)
+      && !this.validate(openToken + this.openToken + this.closeToken)
+      && this.validate(openToken + 'valid' + this.closeToken)
+      && !this.validate(openToken + 'invalid')
+      && !this.validate('invalid' + this.closeToken)
+      && this.validate('var test = function() { return true }')
+      && this.validate('(function(a){return a;})(5);')
+      && this.validate('(function(a){return [a, a];})(5);');
   }
 }
 
+// instantiate a few different syntax tokens
 var CurlyBraceChecker = CurlyBraceChecker || new SyntaxChecker('{', '}'),
   SquareBraceChecker = SquareBraceChecker || new SyntaxChecker('[', ']'),
   ParenthesesChecker = ParenthesesChecker || new SyntaxChecker('(', ')');
 
+// ensure our tests pass for each instantiation
 CurlyBraceChecker.test();
 SquareBraceChecker.test();
 ParenthesesChecker.test();
