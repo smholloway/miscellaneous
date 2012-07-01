@@ -1,10 +1,7 @@
 var MeaningfulWhitespaceChecker = function () {
   // ensure the client has a new instance of MeaningfulWhitespaceChecker
-  if ( !(this instanceof arguments.callee) ) {
-    return new MeaningfulWhitespaceChecker(openToken, closeToken);
-  } else {
-    return this;
-  }
+  if ( !(this instanceof MeaningfulWhitespaceChecker) )
+    return new MeaningfulWhitespaceChecker();
 }
 
 // naive validate implementation that counts the number open and close tokens
@@ -65,7 +62,7 @@ var test = function() {\n\
 }
 
 // instantiate a few different syntax tokens
-var meaningfulWhitespaceChecker = MeaningfulWhitespaceChecker || new MeaningfulWhitespaceChecker();
+var meaningfulWhitespaceChecker = new MeaningfulWhitespaceChecker();
 
 // ensure our tests pass for each instantiation
-meaningfulWhitespaceChecker.prototype.test();
+meaningfulWhitespaceChecker.test();
