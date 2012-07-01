@@ -1,11 +1,11 @@
 var SyntaxChecker = function (openToken, closeToken) {
-  // ensure the client has a new instance of SyntaxChecker
-  if ( !(this instanceof arguments.callee) ) 
-    return new SyntaxChecker(openToken, closeToken); 
-
   // if no tokens were given, default to parentheses
   this.openToken = openToken || '(';
   this.closeToken = closeToken || ')';
+  
+  // ensure the client has a new instance of SyntaxChecker
+  if ( !(this instanceof arguments.callee) ) 
+    return new SyntaxChecker(openToken, closeToken); 
 
   // naive validate implementation that counts the number open and close tokens
   this.validate = function (expression) {
