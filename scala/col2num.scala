@@ -7,11 +7,11 @@
   *   col2num("aaa") -> 703
   */
 def col2num(str: String): Int = {
-  var ret = 0
+  var num = 0
   var index = 0
-  for (c <- str.toUpperCase.reverse) {
-    ret = ret + ((c - 'A' + 1) * scala.math.pow(26, index).toInt)
+  str.toUpperCase.reverse.foreach { c =>
+    num = num + ((c - 'A' + 1) * scala.math.pow(26, index).toInt)
     index += 1
   }
-  ret
+  num
 }
