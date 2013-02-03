@@ -52,20 +52,22 @@ def time_it(f, runs=1000000)
 end
 
 def main
+  runs = ARGV[0] || 1000
+  puts "Timing #{runs} run(s) -- this may take a while."
+
   polymorphic_times = []
   not_polymorphic_times = []
-  runs = 1000
 
-  runs.times do
+  runs.to_i.times do
     polymorphic_times << time_it(method(:polymorphic))
     not_polymorphic_times << time_it(method(:not_so_polymorphic))
   end
   
-  polymorphic_average = polymorphic_times.inject(:+) / polymorphic_times.size
-  not_polymorphic_average = not_polymorphic_times.inject(:+) / polymorphic_times.size
+  polymorphic_average = polymorphic_times.reduce(:+) / polymorphic_times.size
+  not_polymorphic_average = not_polymorphic_times.reduce(:+) / not_polymorphic_times.size
 
-  p "polymorphic_times = #{polymorphic_average}"
-  p "not_polymorphic_times = #{not_polymorphic_average}"
+  puts "    polymorphic average: #{polymorphic_average}"
+  puts "not polymorphic average: #{not_polymorphic_average}"
 end
 
 main
