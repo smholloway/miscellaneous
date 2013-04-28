@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Rhythm Tester</title>
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<link href="timing.css" rel="stylesheet">
+	<script src="timing.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="inner-container">
+			<header>
+				<h1>How's your rhythm?</h1>
+			</header>
+
+			<div id="description">
+				To test your rhythm, simply press any key repeatedly. Below, you will see your average time between pressing keys and the variation between each keypress (in ms). If you want to start over, simply press the "Reset Timing Information" button.
+			</div>
+
+			<div id="timingInformation">
+				<div id="timingLastContainer" class="timing-container">
+					<h3>Time between previous keypresses</h3>
+					<div id="timingLast">0</div>
+				</div>
+				<div id="timingAverageContainer" class="timing-container">
+					<h3>Average time between keypresses</h3>
+					<div id="timingAverage">0</div>
+				</div>
+				<div id="timingStandardDeviationContainer" class="timing-container">
+					<h3>Standard deviation</h3>
+					<div id="timingStandardDeviation">0</div>
+				</div>
+			</div>
+
+			<input type="submit" value="Reset Timing Information" id="resetTiming" class="btn btn-large" onclick="resetTiming()" />
+		</div>
+
+		<footer>
+			<a href="http://www.sethholloway.com/">&copy; Seth Holloway &hearts; 2013</a>
+		</footer>
+	</div>
+</body>
+</html>

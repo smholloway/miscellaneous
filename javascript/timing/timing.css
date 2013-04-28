@@ -1,0 +1,29 @@
+body {
+	background: url('norwegian_rose.png') repeat 0 0;
+}
+header {
+	color: #0088cc;
+}
+.inner-container {
+	background: #FFF;
+	border: solid 1px rgb(0,0,0,.5);
+	-moz-box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	box-shadow: 1px 1px 3px rgba(0,0,0,.5);
+	border-radius: 0.5em;
+	margin: 1em;
+	padding: 1em;
+}
+#timingInformation {
+	margin: 1em;
+	
+}
+.timing-container {
+	background-color: #f7f7f9;
+	border-radius: 0.5em;
+	margin: 0.5em;
+	padding: 0.5em 1em;
+}
+footer {
+	text-align: center;
+}
