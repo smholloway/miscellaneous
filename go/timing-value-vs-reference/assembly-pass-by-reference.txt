@@ -1,0 +1,66 @@
+--- prog list "UpdateValueByReference" ---
+TEXT    UpdateValueByReference+0(SB),$0-8
+MOVQ    someVal+0(FP),AX
+FUNCDATA $0,gcargs·0+0(SB)
+FUNCDATA $1,gclocals·0+0(SB)
+TYPE    someVal+0(FP){*int},$8
+CMPQ    AX,$0
+JNE     $1,8
+MOVL    AX,(AX)
+NOP     ,
+MOVQ    (AX),BP
+INCQ    ,BP
+MOVQ    BP,(AX)
+RET     ,
+
+--- prog list "main" ---
+TEXT    main+0(SB),$104-0
+FUNCDATA $0,gcargs·1+0(SB)
+FUNCDATA $1,gclocals·1+0(SB)
+TYPE    val+-56(SP){int},$8
+TYPE    autotmp_0001+-24(SP){[]interface {}},$24
+TYPE    autotmp_0002+-48(SP){*[1]interface {}},$8
+TYPE    autotmp_0003+-40(SP){[1]interface {}},$16
+MOVQ    $0,val+-56(SP)
+LEAQ    val+-56(SP),BX
+CMPQ    BX,$0
+JNE     $1,25
+MOVL    AX,(BX)
+NOP     ,
+MOVQ    (BX),BP
+INCQ    ,BP
+MOVQ    BP,(BX)
+LEAQ    autotmp_0003+-40(SP),DI
+MOVQ    $0,AX
+STOSQ   ,
+STOSQ   ,
+LEAQ    autotmp_0003+-40(SP),BX
+MOVQ    BX,autotmp_0002+-48(SP)
+MOVQ    $1,autotmp_0001+-16(SP)
+MOVQ    $1,autotmp_0001+-8(SP)
+MOVQ    autotmp_0002+-48(SP),SI
+MOVQ    SI,autotmp_0001+-24(SP)
+CMPQ    autotmp_0001+-24(SP),$0
+JNE     $1,42
+MOVL    AX,(NONE)
+MOVQ    $type.string+0(SB),(SP)
+LEAQ    go.string."Done"+0(SB),SI
+LEAQ    8(SP),BP
+MOVQ    BP,DI
+MOVSQ   ,
+MOVSQ   ,
+PCDATA  $0,$40
+CALL    ,runtime.convT2E+0(SB)
+PCDATA  $0,$-1
+LEAQ    24(SP),BX
+MOVQ    autotmp_0001+-24(SP),DI
+MOVQ    BX,SI
+MOVSQ   ,
+MOVSQ   ,
+MOVQ    autotmp_0001+-24(SP),BX
+MOVQ    BX,(SP)
+MOVQ    autotmp_0001+-16(SP),BX
+MOVQ    BX,8(SP)
+MOVQ    autotmp_0001+-8(SP),BX
+CALL    ,fmt.Println+0(SB)
+RET     ,
